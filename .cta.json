@@ -1,7 +1,7 @@
 {
   "framework": "react",
   "typescript": true,
-  "projectName": "front-ai",
+  "projectName": "front",
   "mode": "file-router",
   "tailwind": true,
   "packageManager": "npm",
@@ -9,13 +9,5 @@
   "variableValues": {},
   "git": true,
   "version": 1,
-  "existingAddOns": [
-    "form",
-    "sentry",
-    "shadcn",
-    "store",
-    "table",
-    "tanstack-query",
-    "start"
-  ]
+  "existingAddOns": ["form", "shadcn", "store", "table", "tanstack-query"]
 }
