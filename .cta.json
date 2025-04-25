@@ -1,0 +1,21 @@
+{
+  "framework": "react",
+  "typescript": true,
+  "projectName": "front-ai",
+  "mode": "file-router",
+  "tailwind": true,
+  "packageManager": "npm",
+  "toolchain": "eslint+prettier",
+  "variableValues": {},
+  "git": true,
+  "version": 1,
+  "existingAddOns": [
+    "form",
+    "sentry",
+    "shadcn",
+    "store",
+    "table",
+    "tanstack-query",
+    "start"
+  ]
+}
