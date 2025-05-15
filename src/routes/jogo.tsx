@@ -5,7 +5,7 @@ export const Route = createFileRoute('/jogo')({
   component: RouteComponent,
 })
 
-const palavraSecreta = 'REACT'
+const palavraSecreta = 'JAVASCRIPT'
 
 function RouteComponent() {
   const [letrasAdivinhadas, setLetrasAdivinhadas] = useState<Array<string>>([])
@@ -27,11 +27,11 @@ function RouteComponent() {
   const renderPalavra = () =>
     palavraSecreta.split('').map((letra, i) =>
       letrasAdivinhadas.includes(letra.toUpperCase()) ? (
-        <span key={i} className="letra">
+        <span key={i} className="p-2 text-2xl">
           {letra}
         </span>
       ) : (
-        <span key={i} className="letra">
+        <span key={i} className="p-2 text-2xl">
           _
         </span>
       ),
@@ -55,12 +55,13 @@ function RouteComponent() {
       <div className="w-full p-8">
         <h2>Container do jogo</h2>
 
-        <div className="flex justify-center items-center h-dvh w-full">
-          <div className="palavra">{renderPalavra()}</div>
+        <div className="flex justify-center relative flex-col items-center w-full top-40">
+          <div className="palavra pb-18">{renderPalavra()}</div>
 
-          <div className="teclado">
+          <div className="teclado grid grid-cols-11 gap-4">
             {letrasAlfabeto.map((letra) => (
               <button
+                className="py-2 px-3 text-2xl bg-pink-400 rounded-sm hover:cursor-pointer hover:bg-pink-400/50"
                 key={letra}
                 onClick={() => lidarComTecla(letra)}
                 disabled={letrasAdivinhadas.includes(letra)}
@@ -69,6 +70,11 @@ function RouteComponent() {
               </button>
             ))}
           </div>
+
+          <p className="pt-12">
+            <span className="text-pink-600">Sugestão:</span> Linguagem de
+            programação baste popular 😊
+          </p>
         </div>
       </div>
     </div>
