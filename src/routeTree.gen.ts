@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as JogoImport } from './routes/jogo'
+import { Route as CameraImport } from './routes/camera'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
@@ -19,6 +20,12 @@ import { Route as IndexImport } from './routes/index'
 const JogoRoute = JogoImport.update({
   id: '/jogo',
   path: '/jogo',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CameraRoute = CameraImport.update({
+  id: '/camera',
+  path: '/camera',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -39,6 +46,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/camera': {
+      id: '/camera'
+      path: '/camera'
+      fullPath: '/camera'
+      preLoaderRoute: typeof CameraImport
+      parentRoute: typeof rootRoute
+    }
     '/jogo': {
       id: '/jogo'
       path: '/jogo'
@@ -53,36 +67,41 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/camera': typeof CameraRoute
   '/jogo': typeof JogoRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/camera': typeof CameraRoute
   '/jogo': typeof JogoRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/camera': typeof CameraRoute
   '/jogo': typeof JogoRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/jogo'
+  fullPaths: '/' | '/camera' | '/jogo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/jogo'
-  id: '__root__' | '/' | '/jogo'
+  to: '/' | '/camera' | '/jogo'
+  id: '__root__' | '/' | '/camera' | '/jogo'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CameraRoute: typeof CameraRoute
   JogoRoute: typeof JogoRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CameraRoute: CameraRoute,
   JogoRoute: JogoRoute,
 }
 
@@ -97,11 +116,15 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/camera",
         "/jogo"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/camera": {
+      "filePath": "camera.tsx"
     },
     "/jogo": {
       "filePath": "jogo.tsx"
