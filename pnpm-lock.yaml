@@ -56,6 +56,18 @@ importers:
       '@tanstack/store':
         specifier: ^0.7.0
         version: 0.7.0
+      '@uppy/aws-s3':
+        specifier: ^4.2.3
+        version: 4.2.3(@uppy/core@4.4.4)
+      '@uppy/core':
+        specifier: ^4.4.4
+        version: 4.4.4
+      '@uppy/react':
+        specifier: ^4.2.3
+        version: 4.2.3(@uppy/core@4.4.4)(react@19.1.0)
+      '@uppy/webcam':
+        specifier: ^4.1.2
+        version: 4.1.2(@uppy/core@4.4.4)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -71,6 +83,9 @@ importers:
       react-dom:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
+      react-webcam:
+        specifier: ^7.2.0
+        version: 7.2.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       tailwind-merge:
         specifier: ^3.2.0
         version: 3.2.0
@@ -1944,6 +1959,9 @@ packages:
       '@types/react-dom':
         optional: true
 
+  '@transloadit/prettier-bytes@0.3.5':
+    resolution: {integrity: sha512-xF4A3d/ZyX2LJWeQZREZQw+qFX4TGQ8bGVP97OLRt6sPO6T0TNHBFTuRHOJh7RNmYOBmQ9MHxpolD9bXihpuVA==}
+
   '@tybys/wasm-util@0.9.0':
     resolution: {integrity: sha512-6+7nlbMVX/PVDCwaIQ8nTOPveOcFLSt8GcXdx8hD0bt39uWxYT88uXzqTd4fTvqta7oeUJqudepapKNt2DYJFw==}
 
@@ -1993,6 +2011,9 @@ packages:
 
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
+
+  '@types/retry@0.12.2':
+    resolution: {integrity: sha512-XISRgDJ2Tc5q4TRqvgJtzsRkFYNJzZrhTdtMoGVBttwzzQJkPnS3WWTFc7kuDRoPtPakl+T+OfdEUjYJj7Jbow==}
 
   '@types/triple-beam@1.3.5':
     resolution: {integrity: sha512-6WaYesThRMCl19iryMYP7/x2OVgCtbIVflDGFpWnb9irXI3UjYE4AzmYuiUKY1AJstGijoY+MgUszMgRxIYTYw==}
@@ -2148,6 +2169,52 @@ packages:
     resolution: {integrity: sha512-Jf14pKofg58DIwcZv4Wt9AyVVe7bSJP8ODz+EP9nG/rho08FQzan0VOJk1g6/BNE1RkoYd+lRTWK+/BgH12qoQ==}
     cpu: [x64]
     os: [win32]
+
+  '@uppy/aws-s3@4.2.3':
+    resolution: {integrity: sha512-5vNgTE85DLujOXpzC6KEwJHLSi8o96v4rwZxMvDWQuikvX4sGcGflYjBCsPaVDYUCiiDXuhI8f93zfwCUEwQ/Q==}
+    peerDependencies:
+      '@uppy/core': ^4.4.1
+
+  '@uppy/companion-client@4.4.1':
+    resolution: {integrity: sha512-ardMacShsfzaIbqHEH48YlpzWZkBj1qhAj0Dvn3r31p9d0HA5xFUvAdLYrZ6ezKvZ0RcDbf0SB5qCrQMkjscXQ==}
+    peerDependencies:
+      '@uppy/core': ^4.4.1
+
+  '@uppy/core@4.4.4':
+    resolution: {integrity: sha512-etaG6uSrShnS8x/CGI9ME/XP23jw8FTkujzKbaag4lDTtdlvcs6PxcObtH3I5MxxJXUEWwcfVGTdAUvd/tGCaA==}
+
+  '@uppy/react@4.2.3':
+    resolution: {integrity: sha512-zIG2LzjB+gsiduHsgzfi+wSywTE+DSFPg+FAIlyWP24XF0HEv0ekai0fngewxjBUItZ6HGddWFkvMiRMD6+63g==}
+    peerDependencies:
+      '@uppy/core': ^4.4.4
+      '@uppy/dashboard': ^4.3.3
+      '@uppy/drag-drop': ^4.1.2
+      '@uppy/file-input': ^4.1.2
+      '@uppy/progress-bar': ^4.2.1
+      '@uppy/status-bar': ^4.1.3
+      react: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@uppy/dashboard':
+        optional: true
+      '@uppy/drag-drop':
+        optional: true
+      '@uppy/file-input':
+        optional: true
+      '@uppy/progress-bar':
+        optional: true
+      '@uppy/status-bar':
+        optional: true
+
+  '@uppy/store-default@4.2.0':
+    resolution: {integrity: sha512-PieFVa8yTvRHIqsNKfpO/yaJw5Ae/hT7uT58ryw7gvCBY5bHrNWxH5N0XFe8PFHMpLpLn8v3UXGx9ib9QkB6+Q==}
+
+  '@uppy/utils@6.1.3':
+    resolution: {integrity: sha512-7WuTtMf0k1g962sE76mKy8aDV/kLeDrF8Wv1oTxaXQzUpmHBAoKd3FXLrQXu7TgM0XNHHRZXAckBttbVOWkKCw==}
+
+  '@uppy/webcam@4.1.2':
+    resolution: {integrity: sha512-sbiqtrKxd+aoAkV10vTAj/Wr9PB6WjPhJyTGEz9Ff4+3gqnhUlusO4Od+cHZgGVZeqLhL4L9l6HwsFhdyK3nWg==}
+    peerDependencies:
+      '@uppy/core': ^4.4.4
 
   '@vercel/nft@0.27.7':
     resolution: {integrity: sha512-FG6H5YkP4bdw9Ll1qhmbxuE8KwW2E/g8fJpM183fWQLeVDGqzeywMIeJ9h2txdWZ03psgWMn6QymTxaDLmdwUg==}
@@ -3400,8 +3467,15 @@ packages:
     engines: {node: '>=14.16'}
     hasBin: true
 
+  is-mobile@4.0.0:
+    resolution: {integrity: sha512-mlcHZA84t1qLSuWkt2v0I2l61PYdyQDt4aG1mLIXF5FDMm4+haBCxCPYSr/uwqQNRk1MiTizn0ypEuRAOLRAew==}
+
   is-module@1.0.0:
     resolution: {integrity: sha512-51ypPSPCoTEIN9dy5Oy+h4pShgJmPCygKfyRCISBI+JoWT/2oJvK8QPxmwv7b/p239jXrm9M1mlQbyKJ5A152g==}
+
+  is-network-error@1.1.0:
+    resolution: {integrity: sha512-tUdRRAnhT+OtCZR/LxZelH/C7QtjtFrTu5tXCA8pl55eTUElUHT+GPYV8MBMBvea/j+NxQqVt3LbWMRir7Gx9g==}
+    engines: {node: '>=16'}
 
   is-number@7.0.0:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
@@ -3713,6 +3787,9 @@ packages:
     resolution: {integrity: sha512-aU5EJuIN2WDemCcAp2vFBfp/m4EAhWJnUNSSw0ixs7/kXbd6Pg64EmwJkNdFhB8aWt1sH2CTXrLxo/iAGV3oPQ==}
     engines: {node: '>= 0.6'}
 
+  mime-match@1.0.2:
+    resolution: {integrity: sha512-VXp/ugGDVh3eCLOBCiHZMYWQaTNUHv2IJrut+yXA6+JbLPXHglHwfS/5A5L0ll+jkCY7fIzRJcH6OIunF+c6Cg==}
+
   mime-types@3.0.1:
     resolution: {integrity: sha512-xRc4oEhT6eaBpU1XF7AjpOFD+xQmXNB5OVKwp4tqCuBpHLS/ZbBDrc07mYTDqVMg6PfxUjjNp85O6Cd2Z/5HWA==}
     engines: {node: '>= 0.6'}
@@ -3798,9 +3875,17 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
+  namespace-emitter@2.0.1:
+    resolution: {integrity: sha512-N/sMKHniSDJBjfrkbS/tpkPj4RAbvW3mr8UAzvlMHyun93XEm83IAvhWtJVHo+RHn/oO8Job5YN4b+wRjSVp5g==}
+
   nanoid@3.3.11:
     resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
+  nanoid@5.1.5:
+    resolution: {integrity: sha512-Ir/+ZpE9fDsNH0hQ3C68uyThDXzYcim2EqcZ8zn8Chtt1iylPT9xXJB0kPCnqzgcEGikO9RxSrh63MsmVCU7Fw==}
+    engines: {node: ^18 || >=20}
     hasBin: true
 
   napi-postinstall@0.1.6:
@@ -3971,6 +4056,10 @@ packages:
     resolution: {integrity: sha512-VkndIv2fIB99swvQoA65bm+fsmt6UNdGeIB0oxBs+WhAhdh08QA04JXpI7rbB9r08/nkbysKoya9rtDERYOYMA==}
     engines: {node: '>=18'}
 
+  p-retry@6.2.1:
+    resolution: {integrity: sha512-hEt02O4hUct5wtwg4H4KcWgDdm+l1bOaEy/hWzd8xtXB9BqxTWBBhb+2ImAtH4Cv4rPjV76xN3Zumqk3k3AhhQ==}
+    engines: {node: '>=16.17'}
+
   p-timeout@5.1.0:
     resolution: {integrity: sha512-auFDyzzzGZZZdHz3BtET9VEz0SE/uMEAx7uWfGPucfzEwwe/xH0iVeZibQmANYE/hp9T2+UUZT5m+BKyrDp3Ew==}
     engines: {node: '>=12'}
@@ -4082,6 +4171,9 @@ packages:
     resolution: {integrity: sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==}
     engines: {node: ^10 || ^12 || >=14}
 
+  preact@10.26.6:
+    resolution: {integrity: sha512-5SRRBinwpwkaD+OqlBDeITlRgvd8I8QlxHJw9AxSdMNV6O+LodN9nUyYGpSF7sadHjs6RzeFShMexC6DbtWr9g==}
+
   precinct@11.0.5:
     resolution: {integrity: sha512-oHSWLC8cL/0znFhvln26D14KfCQFFn4KOLSw6hmLhd+LQ2SKt9Ljm89but76Pc7flM9Ty1TnXyrA2u16MfRV3w==}
     engines: {node: ^14.14.0 || >=16.0.0}
@@ -4186,6 +4278,12 @@ packages:
       '@types/react':
         optional: true
 
+  react-webcam@7.2.0:
+    resolution: {integrity: sha512-xkrzYPqa1ag2DP+2Q/kLKBmCIfEx49bVdgCCCcZf88oF+0NPEbkwYk3/s/C7Zy0mhM8k+hpdNkBLzxg8H0aWcg==}
+    peerDependencies:
+      react: '>=16.2.0'
+      react-dom: '>=16.2.0'
+
   react@19.1.0:
     resolution: {integrity: sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==}
     engines: {node: '>=0.10.0'}
@@ -4266,6 +4364,10 @@ packages:
   resolve@2.0.0-next.5:
     resolution: {integrity: sha512-U7WjGVG9sH8tvjW5SmGbQuui75FiyjAX72HX15DwBBwF9dNiQZRQAg9nnPhYy+TUnE0+VcrttuvNI8oSxZcocA==}
     hasBin: true
+
+  retry@0.13.1:
+    resolution: {integrity: sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==}
+    engines: {node: '>= 4'}
 
   reusify@1.1.0:
     resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
@@ -5036,6 +5138,9 @@ packages:
   widest-line@4.0.1:
     resolution: {integrity: sha512-o0cyEG0e8GPzT4iGHphIOh0cJOV8fivsXxddQasHPHfoZf1ZexrfeA21w2NaEN1RHE+fXlfISmOE8R9N3u3Qig==}
     engines: {node: '>=12'}
+
+  wildcard@1.1.2:
+    resolution: {integrity: sha512-DXukZJxpHA8LuotRwL0pP1+rS6CS7FF2qStDDE1C7DDg2rLud2PXRMuEDYIPhgEezwnlHNL4c+N6MfMTjCGTng==}
 
   winston-transport@4.9.0:
     resolution: {integrity: sha512-8drMJ4rkgaPo1Me4zD/3WLfI/zPdA9o2IipKODunnGDcuqbHwjsbB79ylv04LCGGzU0xQ6vTznOMpQGaLhhm6A==}
@@ -7109,6 +7214,8 @@ snapshots:
       '@types/react': 19.1.2
       '@types/react-dom': 19.1.2(@types/react@19.1.2)
 
+  '@transloadit/prettier-bytes@0.3.5': {}
+
   '@tybys/wasm-util@0.9.0':
     dependencies:
       tslib: 2.8.1
@@ -7169,6 +7276,8 @@ snapshots:
 
   '@types/resolve@1.20.2':
     optional: true
+
+  '@types/retry@0.12.2': {}
 
   '@types/triple-beam@1.3.5':
     optional: true
@@ -7332,6 +7441,51 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.7.0':
     optional: true
 
+  '@uppy/aws-s3@4.2.3(@uppy/core@4.4.4)':
+    dependencies:
+      '@uppy/companion-client': 4.4.1(@uppy/core@4.4.4)
+      '@uppy/core': 4.4.4
+      '@uppy/utils': 6.1.3
+
+  '@uppy/companion-client@4.4.1(@uppy/core@4.4.4)':
+    dependencies:
+      '@uppy/core': 4.4.4
+      '@uppy/utils': 6.1.3
+      namespace-emitter: 2.0.1
+      p-retry: 6.2.1
+
+  '@uppy/core@4.4.4':
+    dependencies:
+      '@transloadit/prettier-bytes': 0.3.5
+      '@uppy/store-default': 4.2.0
+      '@uppy/utils': 6.1.3
+      lodash: 4.17.21
+      mime-match: 1.0.2
+      namespace-emitter: 2.0.1
+      nanoid: 5.1.5
+      preact: 10.26.6
+
+  '@uppy/react@4.2.3(@uppy/core@4.4.4)(react@19.1.0)':
+    dependencies:
+      '@uppy/core': 4.4.4
+      '@uppy/utils': 6.1.3
+      react: 19.1.0
+      use-sync-external-store: 1.5.0(react@19.1.0)
+
+  '@uppy/store-default@4.2.0': {}
+
+  '@uppy/utils@6.1.3':
+    dependencies:
+      lodash: 4.17.21
+      preact: 10.26.6
+
+  '@uppy/webcam@4.1.2(@uppy/core@4.4.4)':
+    dependencies:
+      '@uppy/core': 4.4.4
+      '@uppy/utils': 6.1.3
+      is-mobile: 4.0.0
+      preact: 10.26.6
+
   '@vercel/nft@0.27.7(rollup@4.40.0)':
     dependencies:
       '@mapbox/node-pre-gyp': 1.0.11
@@ -7381,7 +7535,7 @@ snapshots:
       consola: 3.4.2
       defu: 6.1.4
       get-port-please: 3.1.2
-      h3: 1.13.0
+      h3: 1.15.1
       http-shutdown: 1.2.2
       jiti: 1.21.7
       mlly: 1.7.4
@@ -8927,8 +9081,12 @@ snapshots:
       is-docker: 3.0.0
     optional: true
 
+  is-mobile@4.0.0: {}
+
   is-module@1.0.0:
     optional: true
+
+  is-network-error@1.1.0: {}
 
   is-number@7.0.0: {}
 
@@ -9249,6 +9407,10 @@ snapshots:
   mime-db@1.54.0:
     optional: true
 
+  mime-match@1.0.2:
+    dependencies:
+      wildcard: 1.1.2
+
   mime-types@3.0.1:
     dependencies:
       mime-db: 1.54.0
@@ -9333,7 +9495,11 @@ snapshots:
 
   ms@2.1.3: {}
 
+  namespace-emitter@2.0.1: {}
+
   nanoid@3.3.11: {}
+
+  nanoid@5.1.5: {}
 
   napi-postinstall@0.1.6: {}
 
@@ -9619,6 +9785,12 @@ snapshots:
   p-map@7.0.3:
     optional: true
 
+  p-retry@6.2.1:
+    dependencies:
+      '@types/retry': 0.12.2
+      is-network-error: 1.1.0
+      retry: 0.13.1
+
   p-timeout@5.1.0:
     optional: true
 
@@ -9727,6 +9899,8 @@ snapshots:
       nanoid: 3.3.11
       picocolors: 1.1.1
       source-map-js: 1.2.1
+
+  preact@10.26.6: {}
 
   precinct@11.0.5:
     dependencies:
@@ -9839,6 +10013,11 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.1.2
 
+  react-webcam@7.2.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+
   react@19.1.0: {}
 
   read-package-up@11.0.0:
@@ -9939,6 +10118,8 @@ snapshots:
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     optional: true
+
+  retry@0.13.1: {}
 
   reusify@1.1.0: {}
 
@@ -10944,6 +11125,8 @@ snapshots:
     dependencies:
       string-width: 5.1.2
     optional: true
+
+  wildcard@1.1.2: {}
 
   winston-transport@4.9.0:
     dependencies:
